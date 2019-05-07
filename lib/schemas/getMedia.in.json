@@ -1,0 +1,242 @@
+{
+    "type": "object",
+    "properties": {
+        "max": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "sort": {
+            "required": false,
+            "type": "string"
+        },
+        "order": {
+            "required": false,
+            "type": "string"
+        },
+        "mediaTypes": {
+            "required": false,
+            "type": "string"
+        },
+        "name": {
+            "required": false,
+            "type": "string"
+        },
+        "collectionId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "nameContains": {
+            "required": false,
+            "type": "string"
+        },
+        "descriptionContains": {
+            "required": false,
+            "type": "string"
+        },
+        "sourceUrl": {
+            "required": false,
+            "type": "string"
+        },
+        "sourceUrlContains": {
+            "required": false,
+            "type": "string"
+        },
+        "customThumbnailUrl": {
+            "required": false,
+            "type": "string"
+        },
+        "customThumbnailUrlContains": {
+            "required": false,
+            "type": "string"
+        },
+        "dateContentAuthored": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "dateContentUpdated": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "dateContentPublished": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "dateContentReviewed": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "dateSyndicationCaptured": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "dateSyndicationUpdated": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "contentAuthoredSinceDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "contentAuthoredBeforeDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "contentAuthoredInRange": {
+            "required": false,
+            "type": "string"
+        },
+        "contentUpdatedSinceDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "contentUpdatedBeforeDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "contentUpdatedInRange": {
+            "required": false,
+            "type": "string"
+        },
+        "contentPublishedSinceDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "contentPublishedBeforeDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "contentPublishedInRange": {
+            "required": false,
+            "type": "string"
+        },
+        "contentReviewedSinceDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "contentReviewedBeforeDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "contentReviewedInRange": {
+            "required": false,
+            "type": "string"
+        },
+        "syndicationCapturedSinceDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "syndicationCapturedBeforeDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "syndicationCapturedInRange": {
+            "required": false,
+            "type": "string"
+        },
+        "syndicationUpdatedSinceDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "syndicationUpdatedBeforeDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "syndicationUpdatedInRange": {
+            "required": false,
+            "type": "string"
+        },
+        "syndicationVisibleSinceDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "syndicationVisibleBeforeDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "syndicationVisibleInRange": {
+            "required": false,
+            "type": "string"
+        },
+        "languageId": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "languageName": {
+            "required": false,
+            "type": "string"
+        },
+        "languageIsoCode": {
+            "required": false,
+            "type": "string"
+        },
+        "hash": {
+            "required": false,
+            "type": "string"
+        },
+        "hashContains": {
+            "required": false,
+            "type": "string"
+        },
+        "sourceId": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "sourceName": {
+            "required": false,
+            "type": "string"
+        },
+        "sourceNameContains": {
+            "required": false,
+            "type": "string"
+        },
+        "sourceAcronym": {
+            "required": false,
+            "type": "string"
+        },
+        "sourceAcronymContains": {
+            "required": false,
+            "type": "string"
+        },
+        "tagIds": {
+            "required": false,
+            "type": "string"
+        },
+        "restrictToSet": {
+            "required": false,
+            "type": "string"
+        },
+        "createdBy": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

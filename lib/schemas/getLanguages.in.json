@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "max": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "sort": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

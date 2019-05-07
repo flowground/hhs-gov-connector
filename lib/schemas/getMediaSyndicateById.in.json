@@ -1,0 +1,63 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "cssClass": {
+            "required": false,
+            "type": "string",
+            "default": "syndicate"
+        },
+        "stripStyles": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "stripScripts": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "stripImages": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "stripBreaks": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "stripClasses": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "imageFloat": {
+            "required": false,
+            "type": "string"
+        },
+        "imageMargin": {
+            "required": false,
+            "type": "string"
+        },
+        "autoplay": {
+            "required": false,
+            "type": "boolean",
+            "default": true
+        },
+        "rel": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "font_size": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

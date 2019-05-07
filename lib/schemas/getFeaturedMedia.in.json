@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "sort": {
+            "required": false,
+            "type": "string"
+        },
+        "max": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        }
+    }
+}

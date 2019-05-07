@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "sort": {
+            "required": false,
+            "type": "string"
+        },
+        "max": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "offset": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "name": {
+            "required": false,
+            "type": "string"
+        },
+        "nameContains": {
+            "required": false,
+            "type": "string"
+        },
+        "mediaId": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "typeId": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "typeName": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

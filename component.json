@@ -1,0 +1,578 @@
+{
+    "title": "HHS Media Services",
+    "description": "\n<div class=\"swagger-ui-wrap extraFooter\"><h3>Common Features / Behaviors</h3>\n    <div class=\"features\">\n        <ul>\n            <li><strong>* \"sort\" param:</strong> supports multi column sorting through the use of commas as delimiters, and a hyphen to denote descending order.\n                <br/>\n                <strong><span>Examples:</span></strong>\n                <ul>\n                    <li><span class=\"example\">name</span><span class=\"description\">sort results by name ascending</span></li>\n                    <li><span class=\"example\">-name</span><span class=\"description\">sort results by name descending</span></li>\n                    <li><span class=\"example\">-name,id</span><span class=\"description\">sort results by name descending and then by id ascending</span></li>\n                    <li><span class=\"example\">id,-dateContentAuthored</span><span class=\"description\">sort results by id ascending and then date descending</span></li>\n                </ul>\n            </li>\n            <li><strong>Date formats:</strong> Date input format is expected to be based on <a href=\"http://www.ietf.org/rfc/rfc3339.txt\">RFC 3339</a>. <br/>\n                <span><strong>Example:</strong></span>\n                <ul><li>2013-11-18T18:43:01Z</li></ul>\n            </li>\n        </ul>\n    </div>\n</div>\n",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/hhs.gov/2/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.digitalmedia.hhs.gov/api/v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getResources": {
+            "main": "./lib/actions/getResources.js",
+            "title": "Get Resources by search query",
+            "description": "Returns the list of Resources matching the search query 'q'.<p>The search query 'q' is a Lucene query.<br>The syntax for a Lucene query can be found <a href=\"http://lucene.apache.org/core/2_9_4/queryparsersyntax.html\">here</a>.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getResources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCampaigns": {
+            "main": "./lib/actions/getCampaigns.js",
+            "title": "Get Campaigns",
+            "description": "Returns the list of Campaigns.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCampaigns.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getCampaignById": {
+            "main": "./lib/actions/getCampaignById.js",
+            "title": "Get Campaign by ID",
+            "description": "Returns the Campaign identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCampaignById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaByCampaignId": {
+            "main": "./lib/actions/getMediaByCampaignId.js",
+            "title": "Get MediaItems by Campaign ID",
+            "description": "Returns the list of MediaItems for the Campaign identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaByCampaignId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_resources_campaigns__id__syndicate_json": {
+            "main": "./lib/actions/get_resources_campaigns__id__syndicate_json.js",
+            "title": "Get MediaItems for Campaign",
+            "description": "Renders the list of MediaItems associated with the Campaign identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_resources_campaigns__id__syndicate_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getLanguages": {
+            "main": "./lib/actions/getLanguages.js",
+            "title": "Get Languages",
+            "description": "Returns the list Languages.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getLanguages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getLanguageById": {
+            "main": "./lib/actions/getLanguageById.js",
+            "title": "Get Language by ID",
+            "description": "Returns the Language identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getLanguageById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMedia": {
+            "main": "./lib/actions/getMedia.js",
+            "title": "Get MediaItems",
+            "description": "Returns the list of MediaItems matching the specified query parameters.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMedia.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getFeaturedMedia": {
+            "main": "./lib/actions/getFeaturedMedia.js",
+            "title": "Get the list of featured content in the syndication system",
+            "description": "Get the list of featured content in the syndication system",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFeaturedMedia.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMostPopularMedia": {
+            "main": "./lib/actions/getMostPopularMedia.js",
+            "title": "Get MediaItems by popularity",
+            "description": "Returns the list of MediaItems with the highest ratings.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMostPopularMedia.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "searchMedia": {
+            "main": "./lib/actions/searchMedia.js",
+            "title": "Get MediaItems by search query",
+            "description": "Returns the list of MediaItems matching the search query 'q'.<p>The search query 'q' is a Lucene query.<br>The syntax for a Lucene query can be found <a href=\"http://lucene.apache.org/core/2_9_4/queryparsersyntax.html\">here</a>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/searchMedia.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaById": {
+            "main": "./lib/actions/getMediaById.js",
+            "title": "Get MediaItem by ID",
+            "description": "Returns the MediaItem identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaContentById": {
+            "main": "./lib/actions/getMediaContentById.js",
+            "title": "Get content for MediaItem",
+            "description": "Returns the raw content (html, image, etc...) for the MediaItem identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaContentById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaEmbedById": {
+            "main": "./lib/actions/getMediaEmbedById.js",
+            "title": "Get embed code for MediaItem",
+            "description": "Returns the javascript or iframe embed code for the MediaItem identified by 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaEmbedById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaPreviewById": {
+            "main": "./lib/actions/getMediaPreviewById.js",
+            "title": "Get JPG preview for MediaItem",
+            "description": "Returns the JPG preview, where applicable, for the MediaItem identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaPreviewById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaRatingsById": {
+            "main": "./lib/actions/getMediaRatingsById.js",
+            "title": "Get Ratings for MediaItem",
+            "description": "Get the Ratings (number of 'likes') for the MediaItem identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaRatingsById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRelatedMediaById": {
+            "main": "./lib/actions/getRelatedMediaById.js",
+            "title": "Get related MediaItems by ID",
+            "description": "Returns the list of MediaItems related to the MediaItem identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRelatedMediaById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaSyndicateById": {
+            "main": "./lib/actions/getMediaSyndicateById.js",
+            "title": "Get syndicated content for MediaItem",
+            "description": "Returns the syndicated content for a given MediaItem in the specified 'format' (HTML or JSON).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaSyndicateById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaThumbnailById": {
+            "main": "./lib/actions/getMediaThumbnailById.js",
+            "title": "Get JPG thumbnail for MediaItem",
+            "description": "Returns the JPG thumbnail, where applicable, for the MediaItem identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaThumbnailById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaYoutubeMetaDataById": {
+            "main": "./lib/actions/getMediaYoutubeMetaDataById.js",
+            "title": "Get Youtube metadata for MediaItem",
+            "description": "Returns the Youtube metadata, where applicable, for the MediaItem identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaYoutubeMetaDataById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaTypes": {
+            "main": "./lib/actions/getMediaTypes.js",
+            "title": "Get MediaTypes",
+            "description": "Returns the list of available MediaTypes.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaTypes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSources": {
+            "main": "./lib/actions/getSources.js",
+            "title": "Get Sources",
+            "description": "Returns the list of Sources.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSourceById": {
+            "main": "./lib/actions/getSourceById.js",
+            "title": "Get Source by ID",
+            "description": "Returns the Source identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSourceById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_resources_sources__id__syndicate_json": {
+            "main": "./lib/actions/get_resources_sources__id__syndicate_json.js",
+            "title": "Get MediaItems for Source",
+            "description": "Renders the list of MediaItems associated with the Source identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_resources_sources__id__syndicate_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTags": {
+            "main": "./lib/actions/getTags.js",
+            "title": "Get Tags",
+            "description": "Returns the list of Tags matching the specified query parameters in the specified 'format'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTagLanguages": {
+            "main": "./lib/actions/getTagLanguages.js",
+            "title": "Get TagLanguages",
+            "description": "Returns the list of TagLanguages",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTagLanguages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTagTypes": {
+            "main": "./lib/actions/getTagTypes.js",
+            "title": "Get TagTypes",
+            "description": "Returns the list of TagTypes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTagTypes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTagById": {
+            "main": "./lib/actions/getTagById.js",
+            "title": "Get Tag by ID",
+            "description": "Returns the Tag identified by the 'id' in the specified 'format'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTagById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMediaByTagId": {
+            "main": "./lib/actions/getMediaByTagId.js",
+            "title": "Get MediaItems for Tag",
+            "description": "Returns the list of MediaItems associated with the Tag identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMediaByTagId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRelatedTagsById": {
+            "main": "./lib/actions/getRelatedTagsById.js",
+            "title": "Get related Tags by ID",
+            "description": "Returns the list of Tags related to the Tag identified by the 'id' in the specified format.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRelatedTagsById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_resources_tags__id__syndicate_json": {
+            "main": "./lib/actions/get_resources_tags__id__syndicate_json.js",
+            "title": "Get MediaItems for Tag",
+            "description": "Renders the list of MediaItems associated with the Tag identified by the 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_resources_tags__id__syndicate_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getUserMediaList": {
+            "main": "./lib/actions/getUserMediaList.js",
+            "title": "Get UserMediaList by ID",
+            "description": "Get a specific user media list by 'id'.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUserMediaList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
